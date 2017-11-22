@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: sensor
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sensor
+    spec:
+      containers:
+      - name: sensor
+        image: brusmx/iot-hub-experiment
+        env:
+        - name: CONNECTION_STRING
+          value: "HostName=myCoolSuperIotHub.azure-devices.net;DeviceId=sensor001-iy0c;SharedAccessKey=khqTuypeR4NiXD9h1wwP+F/uws/mqjv3+K4jeMDlngo="
+        - name: DEVICE_ID
+          value: "sensor001-iy0c"
+        imagePullPolicy: Always

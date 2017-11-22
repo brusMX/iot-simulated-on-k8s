@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+.env
+.sensors
+package-lock.json
+node_modules
+sensors.yaml
+devices.env
